@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/pop_button_widget.dart';
-import '../widgets/bar_widget.dart';
 
 class ResultScreen extends StatelessWidget {
   static final String routeName = '/result';
-  double val = 0;
-  resultFunction(v) {}
   @override
   Widget build(BuildContext context) {
     List args = ModalRoute.of(context).settings.arguments as List<dynamic>;
@@ -58,17 +55,11 @@ class ResultScreen extends StatelessWidget {
               ),
             ],
           ),
-          Column(
-            children: <Widget>[
-              BarWidget(
-                onChanging: resultFunction,
-                val: val,
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Text('Your BMI is ${args[1]}'),
-            ],
+          Text(
+            'Your BMI is ${args[1]}',
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
           ),
           SizedBox(
             height: 30,
