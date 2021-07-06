@@ -1,18 +1,36 @@
 import 'package:flutter/material.dart';
 
+import 'package:easy_localization/easy_localization.dart';
+
 import './view/screens/choose_screen.dart';
 import './view/screens/age_screen.dart';
 import './view/screens/detail_screen.dart';
 import './view/screens/result_screen.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(
+    EasyLocalization(
+      supportedLocales: [
+        Locale('en'),
+        Locale('ar'),
+      ],
+      path: 'assets/langs', // <-- change the path of the translation files
+      fallbackLocale: Locale('en'),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       initialRoute: ChooseScreen.routeName,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:easy_localization/easy_localization.dart';
+
 import './age_screen.dart';
 
 import '../widgets/toggle_switch_widget.dart';
@@ -27,11 +29,24 @@ class _ChooseScreenState extends State<ChooseScreen> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
-            'Choose One',
+            'choose'.tr(),
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
           elevation: 0,
+          actions: [
+            IconButton(
+                icon: Icon(
+                  Icons.language,
+                  color: Colors.black,
+                  size: 35,
+                ),
+                onPressed: () {
+                  Locale locale = EasyLocalization.of(context).currentLocale;
+                  EasyLocalization.of(context).setLocale(
+                      locale == Locale('ar') ? Locale('en') : Locale('ar'));
+                }),
+          ],
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

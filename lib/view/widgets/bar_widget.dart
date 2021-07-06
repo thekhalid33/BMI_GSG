@@ -12,7 +12,7 @@ class BarWidget extends StatelessWidget {
       alignment: AlignmentDirectional.bottomStart,
       children: <Widget>[
         SizedBox(
-          width: 360,
+          width: 320,
           child: SliderTheme(
             data: SliderThemeData(
               trackHeight: 20,
@@ -20,7 +20,7 @@ class BarWidget extends StatelessWidget {
               inactiveTrackColor: Colors.white,
               thumbShape: RoundSliderThumbShape(enabledThumbRadius: 0),
               overlayColor: Color.fromRGBO(178, 69, 146, 0.3),
-              overlayShape: RoundSliderOverlayShape(overlayRadius: 50),
+              overlayShape: RoundSliderOverlayShape(overlayRadius: 30),
             ),
             child: Slider(
               value: val,

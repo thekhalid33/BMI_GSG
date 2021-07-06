@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:easy_localization/easy_localization.dart';
+
 import 'package:toggle_switch/toggle_switch.dart';
 
 class ToggleSwitchWidget extends StatelessWidget {
@@ -12,7 +14,7 @@ class ToggleSwitchWidget extends StatelessWidget {
       initialLabelIndex: index,
       onToggle: (index) => toggle(index),
       totalSwitches: 2,
-      labels: ['Female', 'Male'],
+      labels: ['female'.tr(), 'male'.tr()],
       fontSize: 18,
       minWidth: 150,
       minHeight: 50,

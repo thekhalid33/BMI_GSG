@@ -1,0 +1,15 @@
+{
+  "female":"Female",
+  "male":"Male",
+  "choose":"Choose One",
+  "your_age":"Your Age",
+  "year":"Years",
+  "weight":"Weight",
+  "height":"Height",
+  "ur_w_h":"Your height & Weight",
+  "result":"Your BMI result",
+  "over":"Your Are Overweight",
+  "normal":"Your weight is Normal",
+  "under":"Your Are UnderWeight",
+  "yourBMIis":"Your BMI is"
+}

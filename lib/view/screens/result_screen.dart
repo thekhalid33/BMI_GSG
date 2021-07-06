@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:easy_localization/easy_localization.dart';
+
 import '../widgets/pop_button_widget.dart';
 
 class ResultScreen extends StatelessWidget {
@@ -21,7 +23,7 @@ class ResultScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20),
             width: double.infinity,
             child: Text(
-              'Your BMI result',
+              'result'.tr(),
               style: TextStyle(
                 fontSize: 24,
               ),
@@ -55,11 +57,22 @@ class ResultScreen extends StatelessWidget {
               ),
             ],
           ),
-          Text(
-            'Your BMI is ${args[1]}',
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'yourBMIis'.tr(),
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Text(
+                ' ${args[1]}',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
           ),
           SizedBox(
             height: 30,
